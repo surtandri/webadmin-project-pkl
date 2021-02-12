@@ -11,7 +11,7 @@ body{
 }
 .sidebar{
 	width: 100%;
-	height: 100%;
+	height: 120%;
 	background: #293949;
 	position: absolute;
 	z-index: 100;

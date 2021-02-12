@@ -6,11 +6,11 @@ class Barangs extends Controller
     {
         $this->barangModel = $this->model('Barang');
 
-        $this->merkModel = $this->model('merk');
+        $this->merkModel = $this->model('Merk');
 
-        $this->kategoriModel = $this->model('kategori');
+        $this->kategoriModel = $this->model('Kategori');
 
-        $this->distributorModel = $this->model('distributor');
+        $this->distributorModel = $this->model('Distributor');
     }
 
     public function index(){
@@ -84,7 +84,7 @@ class Barangs extends Controller
     {
         if ($this->barangModel->deleteBarang($id)){
             echo ("<script LANGUAGE='JavaScript'>
-                    window.alert('Succesfully Delete');
+                    window.alert('Succesfully Delete!');
                      window.location.href='../barangs/index';
                     </script>");
         } else{
@@ -111,13 +111,14 @@ class Barangs extends Controller
                 'jual2' =>trim($_POST['jual2']),
                 'stok' =>trim($_POST['stok']), 
             ];
-            
+     
             if ($this->barangModel->lacakInfoBarang($data)){
                 echo ("<script LANGUAGE='JavaScript'>
                             window.alert('Update gagal! Barang ini sudah terdaftar!');
                             window.location.href='../../barangs/index';
-                            </script>");
-            }else{
+                            </script>"); 
+                
+            }else{                        
                 $dataedit = $this->barangModel->updateBarang($data);
 
                 if($dataedit){

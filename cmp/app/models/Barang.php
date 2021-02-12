@@ -19,21 +19,6 @@ class Barang{
         return $result;
     }
 
-    // public function lacakDistributor($nama)
-    // {
-    //     $this->db->query('SELECT * FROM distributor WHERE nama_distributor = :nama');
-
-    //     $this->db->bind(':nama',$nama);
-
-    //     $row = $this->db->rowCount();
-
-    //     if ($row>0) {
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-    // }
-
     public function lacakBarang($data)
     {
         $this->db->query('SELECT * FROM barang WHERE kode_barang = :kode AND id_merk = :merk AND id_kategori = :kategori AND id_distributor = :distributor 
@@ -110,7 +95,7 @@ class Barang{
     {
         $this->db->query('SELECT * FROM barang WHERE kode_barang = :kode AND id_kategori = :kategori AND id_merk = :merk AND id_distributor = :distributor 
                             AND nama_kendaraan = :kendaraan AND nama_barang = :nama AND harga_beli = :beli AND harga_jual1 = :jual1 
-                            AND harga_jual2 = :jual2 AND satuan_barang = :satuan AND stok =  :stok WHERE id_barang = :id');
+                            AND harga_jual2 = :jual2 AND satuan_barang = :satuan AND stok =  :stok AND id_barang = :id');
 
         $this->db->bind(':id', $data['id']);
         $this->db->bind(':kode',$data['kode']);
@@ -145,7 +130,7 @@ class Barang{
     }
 
     public function updateBarang($data)
-    {
+    {   
         $this->db->query('UPDATE barang SET kode_barang = :kode, id_kategori = :kategori, id_merk = :merk, id_distributor = :distributor, nama_kendaraan = :kendaraan,  
                            nama_barang = :nama, harga_beli = :beli, harga_jual1 = :jual1, harga_jual2 = :jual2, satuan_barang = :satuan, stok =  :stok, tgl_input = :tgl_input 
                            WHERE id_barang = :id');

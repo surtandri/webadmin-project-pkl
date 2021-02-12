@@ -1,6 +1,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -70,7 +71,7 @@
 					Don't have an account?<a href="<?php echo URLROOT;?>/users/register">Sign Up</a>
 				</div>
 				<div class="d-flex justify-content-center links">
-					<a href="<?php echo URLROOT;?>/pages/index">Back to Home</a>
+					<a href="<?php echo URLROOT;?>">Back to Home</a>
 				</div>
 			</div>
 		</div>
