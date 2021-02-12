@@ -10,7 +10,7 @@ class Pages extends Controller
     public function index(){
         if (isLoggedIn()){
             if($_SESSION['role'] == "admin"){
-                $this->view('admin/index');
+                $this->view('admins/home');
             }
         }
         else{

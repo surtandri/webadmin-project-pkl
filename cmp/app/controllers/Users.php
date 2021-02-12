@@ -1,7 +1,7 @@
 <?php
 
-class Users extends Controller{
-
+class Users extends Controller
+{
     public function __construct(){
         $this->userModel = $this->model('User');
     }
@@ -43,7 +43,7 @@ class Users extends Controller{
         $_SESSION['role'] = $row->role;
         
         if ($_SESSION['role'] == "admin") {
-            redirect('admin/index');
+            redirect('admins/home');
         }else{
             redirect('pages/index'); 
         }
@@ -57,4 +57,5 @@ class Users extends Controller{
 
         redirect('users/login');
     }
+
 }
