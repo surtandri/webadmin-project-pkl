@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2021 at 02:03 AM
+-- Generation Time: Feb 12, 2021 at 03:14 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -49,8 +49,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `kode_barang`, `id_kategori`, `id_merk`, `id_distributor`, `nama_kendaraan`, `nama_barang`, `harga_beli`, `harga_jual1`, `harga_jual2`, `satuan_barang`, `stok`, `tgl_input`) VALUES
-(2, 'MAXVCT', 2, 24, 2, 'Universal', 'Victra 140/70-14 TL', 300000, 400000, 390000, 'PCS', 20, '11-02-2021, (16:48:33)'),
-(5, 'a', 2, 24, 2, 'a', 'a', 1, 1, 1, 'PCS', 20, '11-02-2021, (15:54:38)');
+(2, 'MAXVCT', 2, 23, 2, 'Universal', 'Victra 140/70-14 TL', 300000, 400000, 390000, 'PCS', 20, '12-02-2021, (13:00:53)'),
+(5, 'a', 2, 34, 2, 'a', 'a', 1, 1, 1, 'PCS', 20, '12-02-2021, (10:35:27)');
 
 -- --------------------------------------------------------
 
@@ -145,6 +145,21 @@ INSERT INTO `merk` (`id_merk`, `nama_merk`, `tgl_input`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `penjualan`
+--
+
+CREATE TABLE `penjualan` (
+  `id_penjualan` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `id_member` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `tgl_Input` varchar(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -198,6 +213,12 @@ ALTER TABLE `merk`
   ADD PRIMARY KEY (`id_merk`);
 
 --
+-- Indexes for table `penjualan`
+--
+ALTER TABLE `penjualan`
+  ADD PRIMARY KEY (`id_penjualan`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -236,6 +257,12 @@ ALTER TABLE `member`
 --
 ALTER TABLE `merk`
   MODIFY `id_merk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT for table `penjualan`
+--
+ALTER TABLE `penjualan`
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
